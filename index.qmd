@@ -1,0 +1,64 @@
+## Overview
+
+### Background
+"Marine aquaculture refers to the breeding, rearing, and harvesting of aquatic plants and animals. It can take place in the ocean, or on land in tanks and ponds." [1]
+It is an important seafood industry around the world and includes both fish and aquatic plants production. 
+According to NOAA Fisheries, "World aquaculture production of fish and plants combined reached 114.5 million tons in live weight in 2019, for an estimated total value of $263.6 billion."
+Additionally, with the growing concern of the environmental impacts of meat production, marine aquaculture has the potential to play an important role in the global food supply.[^hall] 
+
+United States, though has a state-of-the art research and areas suitable for aquaculture currently ranks 17th in total aquaculture production [2]. 
+Aquaculture supplies only about 7 percent of the entire U.S. seafood supply, while 70 to 85 percent of seafood is imported from other countries. Almost half of the imported seafood is farmed.
+Consequently, there is a growing interest in developing marine aquculture domestically.
+
+### Objective
+1. Evaluate the potential for marine aquaculture along the Exclusive Economic Zones (EEZ) on the West Coast of the US, focusing on the following two constraints:\
+- Water depth\
+- Sea surface temperatures\
+
+2. Build a function to aid in the future analysis of the feasibility of the selected areas for marine aquaculture.
+The analysis is guided by the work of Gentry et al., who mapped the potential for marine aquaculture globally based on multiple constraints, including ship traffic, dissolved oxygen, and bottom depth [3].
+
+
+### Data 
+
+The analysis is based on the following three datasets:\
+
+- Sea Surface Temperature\
+Description: The dataset contains average annual sea surface temperature (SST) from the years 2008 to 2012. The data was originally generated from NOAA’s 5km Daily Global Satellite Sea Surface Temperature Anomaly v3.1. [4]\
+- Bathymetry\
+Description: The dataset provides the General Bathymetric Chart of the Oceans (GEBCO). [3]\
+- Exclusive Economic Zones
+Description: Shapefiles of the Exclusive Economic Zones off the west coast of the US from Marineregions.org.
+
+### Approach
+I used geospatial data and tools to conduct the analysis, including:\
+
+- Combining vector/raster data\
+- Resampling raster data\
+- Masking raster data\
+- Map algebra\
+- Map visualization\
+
+I applied a two-step approach in my analysis:\
+1. I created a sample workflow to identify Exclusive Economic Zone (EEZ) areas suitable for oyster aquaculture.\
+2. Second, I created a function to generalize the workflow to other species.
+
+
+### limitations
+- The scope of the analysis was limited to two parameters: depth and sea surface temperature;\
+
+## Analysis
+
+The next few sections provide the steps I applied to complete the analysis. The code is available in the github repository: [west_coast_eez_aquaculture](https://github.com/oksanaprotsukha/west_coast_eez_aquaculture.git)
+
+#### Setup
+
+### Citations
+
+[1] Fisheries, NOAA. “Understanding Marine Aquaculture | NOAA Fisheries.” NOAA, 29 Dec. 2022, https://www.fisheries.noaa.gov/insight/understanding-marine-aquaculture. National.\
+[2] FAO, editor. Moving Forward on Food Loss and Waste Reduction. Food and Agriculture Organization of the United Nations, 2019.\
+[3] Oceans, General Bathymetric Chart of the. “Gridded Bathymetry Data (General Bathymetric Chart of the Oceans).” GEBCO, https://www.gebco.net/data_and_products/gridded_bathymetry_data/. Accessed 14 Dec. 2023.\
+[4] NOAA Coral Reef Watch Daily 5km Satellite Coral Bleaching Heat Stress SST Anomaly Product (Version 3.1). https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php. Accessed 14 Dec. 2023.
+
+
+
