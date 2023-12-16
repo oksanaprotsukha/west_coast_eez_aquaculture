@@ -218,10 +218,10 @@ Description: The dataset provides the General Bathymetric Chart of the Oceans (G
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load shapefile for the West Coast EEZ </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wceez <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">here</span>(<span class="st">"data/wc_regions_clean.shp"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wceez <span class="ot">=</span> <span class="fu">st_read</span>(<span class="fu">file.path</span>(file_path,<span class="st">"data/wc_regions_clean.shp"</span>))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load sst raster files</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">file.path</span>(file_path), </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">file.path</span>(file_path, <span class="st">"data/"</span>), </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">pattern =</span> <span class="st">"sst_.*.tif$"</span>, </span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">full.names =</span> <span class="cn">TRUE</span>) <span class="co"># '.*' matches any sequence of characters</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>layer_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"avg_sst_2008"</span>, <span class="st">"avg_sst_2009"</span>, <span class="st">"avg_sst_2010"</span>, <span class="st">"avg_sst_2011"</span>, <span class="st">"avg_sst_2012"</span>)</span>
@@ -232,7 +232,7 @@ Description: The dataset provides the General Bathymetric Chart of the Oceans (G
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">project</span>(<span class="fu">crs</span>(wceez))</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># load bathymetry raster (depth data)</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>depth <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">file.path</span>(file_path,<span class="st">"/depth.tif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>depth <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">file.path</span>(file_path,<span class="st">"data/depth.tif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>

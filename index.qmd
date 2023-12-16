@@ -121,10 +121,10 @@ read_raster <- function(files, layer_names, raster_name) {
 #| code-fold: true
 
 # load shapefile for the West Coast EEZ 
-wceez = st_read(here("data/wc_regions_clean.shp"))
+wceez = st_read(file.path(file_path,"data/wc_regions_clean.shp"))
 
 # load sst raster files
-files <- list.files(file.path(file_path), 
+files <- list.files(file.path(file_path, "data/"), 
                     pattern = "sst_.*.tif$", 
                     full.names = TRUE) # '.*' matches any sequence of characters
 layer_names <- c("avg_sst_2008", "avg_sst_2009", "avg_sst_2010", "avg_sst_2011", "avg_sst_2012")
@@ -135,7 +135,7 @@ sst <- read_raster(files = files,
   project(crs(wceez))
 
 # load bathymetry raster (depth data)
-depth <- rast(file.path(file_path,"/depth.tif"))
+depth <- rast(file.path(file_path,"data/depth.tif"))
 
 ```
 
